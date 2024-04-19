@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cd_manager.Inchirieri
+namespace cd_manager.Inchiriere
 {
-    public class Inchirieri
+    public class Inchiriere
     {
         private int _id;
         private int _idUser;
         private int _idCd;
 
-        public Inchirieri(int id, int idUser, int idCd)
+        public Inchiriere(int id, int idUser, int idCd)
         {
             _id = id;
             _idUser = idUser;
-            _idBook = idBook;
+            _idCd = idCd;
         }
 
         public int Id

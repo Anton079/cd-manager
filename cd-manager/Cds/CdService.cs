@@ -1,11 +1,10 @@
-﻿using cd_manager.Cds;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cd_manager
+namespace cd_manager.Cds
 {
     public class CdSService
     {
@@ -14,12 +13,12 @@ namespace cd_manager
         public CdSService()
         {
             _cd = new List<Cd>();
-            this.LoadData();
+            LoadData();
         }
 
         private void LoadData()
         {
-            Cd Cd1 = new Cd(1, "CD Audio standard",700,2,true );
+            Cd Cd1 = new Cd(1, "CD Audio standard", 700, 2, true);
             Cd Cd2 = new Cd(2, "CD-R", 1500, 1, false);
             Cd Cd3 = new Cd(3, "CD-RW", 150, 5, true);
             Cd Cd4 = new Cd(4, "CD-ROM", 500, 5, false);
@@ -44,7 +43,7 @@ namespace cd_manager
         {
             foreach (Cd x in _cd)
             {
-                if(x.Disponibila == true)
+                if (x.Disponibila == true)
                 {
                     Console.WriteLine(x.CdsInfo());
                 }
@@ -53,9 +52,9 @@ namespace cd_manager
 
         public List<Cd> FindAllCdsByIds(List<int> cdIds)
         {
-            List <Cd> filteredCds = new List<Cd>();    
+            List<Cd> filteredCds = new List<Cd>();
 
-            for(int i = 0; i < cdIds.Count; i++)
+            for (int i = 0; i < cdIds.Count; i++)
             {
                 if (cdIds.Contains(_cd[i].Id))
                 {
@@ -67,9 +66,9 @@ namespace cd_manager
 
         public Cd FindCdById(int idCd)
         {
-            foreach(Cd x in _cd)
+            foreach (Cd x in _cd)
             {
-                if(x.Id == idCd)
+                if (x.Id == idCd)
                 {
                     return x;
                 }
@@ -81,6 +80,11 @@ namespace cd_manager
         {
             Cd cd = FindCdById(idCd);
             _cd.Remove(cd);
+        }
+
+        public void AddCdinLoadData(Cd cd6)
+        {
+            _cd.Add(cd6);
         }
     }
 }

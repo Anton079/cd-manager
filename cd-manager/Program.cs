@@ -1,6 +1,16 @@
-﻿Program();
+﻿using cd_manager;
+using cd_manager.Users;
 
-static void Program()
+internal class Program
 {
-    Console.WriteLine("Hello, World!");
+    private static void Main(string[] args)
+    {
+        UserService userService = new UserService();
+
+
+
+        userService.AfisareUser();
+
+        //userService.SaveData();
+    }
 }

@@ -49,8 +49,8 @@ namespace cd_manager.Cds
 
         public bool Disponibila
         {
-            get { return _disponibila;}
-            set { _disponibila = value;}
+            get { return _disponibila; }
+            set { _disponibila = value; }
         }
 
         public string CdsInfo()

@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cd_manager.Inchirieri
+namespace cd_manager.Inchiriere
 {
-    public class InchirieriService
+    public class InchiriereService
     {
-        private List<Inchirieri> _Inchiriere;
+        private List<Inchiriere> _Inchiriere;
 
-        public InchirieriService()
+        public InchiriereService()
         {
-            _Inchiriere = new List<Inchirieri>();
+            _Inchiriere = new List<Inchiriere>();
 
             this.LoadData();
         }
 
         public void LoadData()
         {
-            Inchirieri Inchiriere1 = new Inchirieri(1, 2, 1);
-            Inchirieri Inchiriere2 = new Inchirieri(2, 1, 4);
-            Inchirieri Inchiriere3 = new Inchirieri(3, 2, 5);
-            Inchirieri Inchiriere4 = new Inchirieri(4, 1, 2);
-            Inchirieri Inchiriere5 = new Inchirieri(5, 2, 3);
+            Inchiriere Inchiriere1 = new Inchiriere(1, 2, 1);
+            Inchiriere Inchiriere2 = new Inchiriere(2, 1, 4);
+            Inchiriere Inchiriere3 = new Inchiriere(3, 2, 5);
+            Inchiriere Inchiriere4 = new Inchiriere(4, 1, 2);
+            Inchiriere Inchiriere5 = new Inchiriere(5, 2, 3);
 
             this._Inchiriere.Add(Inchiriere1);
             this._Inchiriere.Add(Inchiriere2);
@@ -77,5 +77,11 @@ namespace cd_manager.Inchirieri
 
             return id;
         }
+
+        public void AddIstoricInchiriere(Inchiriere inchirieri)
+        {
+           this._Inchiriere.Add(inchirieri);
+        }
+
     }
 }

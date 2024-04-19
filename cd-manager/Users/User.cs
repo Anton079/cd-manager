@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cd_manager
+namespace cd_manager.Users
 {
     public class User
     {
@@ -12,6 +12,19 @@ namespace cd_manager
         private string _email;
         private string _password;
         private string _phone;
+
+
+        public User(String proprietati)
+        {
+
+
+            String[] tokens=proprietati.Split(',');
+
+            this._id = int.Parse(tokens[0]);
+            this._email = tokens[1];
+            this._password = tokens[2];
+            this._phone = tokens[3];
+        }
 
         public User(int id, string email, string password, int phone)
         {
@@ -53,6 +66,12 @@ namespace cd_manager
             text += "Password " + Password + "\n";
             text += "Phone " + Phone + "\n";
             return text;
+        }
+
+        public string ToSave()
+        {
+
+            return this._id+","+ this._email + ","+ this._password + ","+ this._phone;
         }
     }
 }
