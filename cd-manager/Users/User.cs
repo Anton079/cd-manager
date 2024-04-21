@@ -70,7 +70,6 @@ namespace cd_manager.Users
 
         public string ToSave()
         {
-
             return this._id+","+ this._email + ","+ this._password + ","+ this._phone;
         }
     }

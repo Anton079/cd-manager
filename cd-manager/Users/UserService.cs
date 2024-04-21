@@ -73,7 +73,7 @@ namespace cd_manager.Users
 
 
 
-        //sa iau file ul
+        //functie: creaza drum catre file ul pe care il doresc 
         private String GetFilePath()
         {
 
@@ -86,8 +86,10 @@ namespace cd_manager.Users
             return file;
         }
 
-        //functie ca sa salvez tot
-        public string ToSaveAll()
+
+
+        //functie: converteste toate elementele user pentru a le salva 
+        public string ToSaveAll()    
         {
             String save = "";
 
@@ -101,7 +103,7 @@ namespace cd_manager.Users
             return save;
         }
 
-        // functia de salvare in file
+        // functia de salvare in file   
         public void SaveData()
         {
             try
@@ -109,6 +111,7 @@ namespace cd_manager.Users
                 using (StreamWriter sw = new StreamWriter(this.GetFilePath()))
                 {                   
                     sw.Write(ToSaveAll());
+                    sw.Close();
                 }
             }
             catch (Exception ex)
